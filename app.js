@@ -39,7 +39,7 @@ app.use(flash());
 app.use(require('express-session')({
     secret: "Laugh tale is the last island in onepiece",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
