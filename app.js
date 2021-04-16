@@ -19,7 +19,14 @@ var indexRoutes = require('./routes/index');
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
 // mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser: true});
-mongoose.connect("mongodb+srv://VenkataAdithyaVytla:R6ZTDb5VSQ16Wp9V@cluster0.6n4vn.mongodb.net/yelp_camp?retryWrites=true&w=majority",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://VenkataAdithyaVytla:R6ZTDb5VSQ16Wp9V@cluster0.6n4vn.mongodb.net/yelp_camp?retryWrites=true&w=majority",{
+    useNewUrlParser: true,
+    useCreateIndex: true
+    }).then(() => {
+	       console.log("Connected to DB!");
+    }).catch(err => {
+	       console.log("Error: ", err.message);
+});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname +"/public"));
 app.set("view engine","ejs");
