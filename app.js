@@ -19,7 +19,7 @@ var indexRoutes = require('./routes/index');
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
 // mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser: true});
-mongoose.connect("mongodb+srv://VenkataAdithyaVytla:R6ZTDb5VSQ16Wp9V@cluster0.6n4vn.mongodb.net/yelp_camp?retryWrites=true&w=majority",{
+mongoose.connect(process.env.DATABASEURL,{
     useNewUrlParser: true,
     useCreateIndex: true
     }).then(() => {
