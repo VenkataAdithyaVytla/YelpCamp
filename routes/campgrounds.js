@@ -3,9 +3,6 @@ var router = express.Router();
 var Campground = require('../models/campground');
 var middleware = require('../middleware');
 
-
-
-
 // INDEX - show all campgrounds
 router.get("/",function(req,res){
     // Get all Campgrounds from db

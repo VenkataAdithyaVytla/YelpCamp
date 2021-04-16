@@ -34,7 +34,6 @@ app.use(methodOverride("_method"));
 app.use(flash());
 // seedDB();//seed the database
 
-
 // Passport Configuration
 app.use(require('express-session')({
     secret: "Laugh tale is the last island in onepiece",
